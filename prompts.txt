@@ -1,0 +1,5 @@
+[Aula1]
+
+- estou criando uma hmtl e preciso de um campo para as pessoas digitarem palavras para realizar uma busca em minha base de conhecimento. Qual tag html posso usar?
+- Estou criando um projeto com html e css e gostaria de alinhas todos os meus textos ao centro da tela. qualpropriedade posso usar para isso?
+
