@@ -4,12 +4,12 @@ function pesquisar() {
     let section = document.getElementById("resultados-pesquisa");
     let campoPesquisa = document.getElementById("campo-pesquisa").value;
     if (campoPesquisa == "") {
-        section.innerHTML = "";
+        section.innerHTML = "Nenhum resultado encontrado";
         return;
     }
     let resultados = "";
     for (let dado of dados) {
-        if (dado.titulo.toLowerCase().includes(campoPesquisa.toLowerCase())) {
+        if (dado.titulo.toLowerCase().includes(campoPesquisa.toLowerCase()) || dado.descricao.toLowerCase().includes(campoPesquisa.toLowerCase())|| dado.tags.toLowerCase().includes(campoPesquisa.toLowerCase())) {
             resultados += `
             <div class="item-resultado">
                 <a href="#" target="_blank">
