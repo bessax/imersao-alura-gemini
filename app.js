@@ -1,10 +1,16 @@
 function pesquisar() {
+    console.log(dados);
     console.log('Pesquisando...');
-    let section = document.getElementById('resultados-pesquisa');
+    let section = document.getElementById("resultados-pesquisa");
+    let campoPesquisa = document.getElementById("campo-pesquisa").value;
+    if (campoPesquisa == "") {
+        section.innerHTML = "";
+        return;
+    }
     let resultados = "";
-
     for (let dado of dados) {
-        resultados += `
+        if (dado.titulo.toLowerCase().includes(campoPesquisa.toLowerCase())) {
+            resultados += `
             <div class="item-resultado">
                 <a href="#" target="_blank">
                     <h2>${dado.titulo}</h2>
@@ -14,11 +20,10 @@ function pesquisar() {
                 <a href=${dado.link} target="_blank">Mais informações</a>
             </div>
         `;
+        }
     }
 
     section.innerHTML = resultados;
-
-
 
 }
 
