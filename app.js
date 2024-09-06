@@ -3,8 +3,8 @@ function pesquisar() {
     console.log('Pesquisando...');
     let section = document.getElementById("resultados-pesquisa");
     let campoPesquisa = document.getElementById("campo-pesquisa").value;
-    if (campoPesquisa == "") {
-        section.innerHTML = "Nenhum resultado encontrado";
+    if (!campoPesquisa) {
+        section.innerHTML = "<p>Nada foi encontrado. Você precisa digitar o nome de um atleta ou esporte.</p>";
         return;
     }
     let resultados = "";
@@ -22,6 +22,11 @@ function pesquisar() {
         `;
         }
     }
+
+    if (!resultados) {
+        resultados = "<p>Nenhum resultado encontrado.</p>";
+    }
+
 
     section.innerHTML = resultados;
 
